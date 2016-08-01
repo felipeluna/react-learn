@@ -32,7 +32,11 @@ class Video extends React.Component {
 	render(){
 		return(
 			<div className="video">
-				<img src={this.props.video.thumb} alt=""/>
+				<a href={this.props.video.link}>
+					<img src={this.props.video.thumb} alt=""/>
+				</a>
+				<br/>
+				{this.props.video.title}
 			</div>
 		);
 	}
