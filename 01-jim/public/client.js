@@ -18,7 +18,7 @@ class MovieList extends React.Component {
 		var a = videos.allVideos();
 		var rows = [];
 		for (var i = 0; i < a.length; i++) {	
-					rows.push(<Video title={a[i].title} />)
+			rows.push(<Video video={a[i]} />)
 		}
 		return(
 			<div className="movieList">
@@ -32,7 +32,7 @@ class Video extends React.Component {
 	render(){
 		return(
 			<div className="video">
-				<h1>{this.props.title}</h1>
+				<img src={this.props.video.thumb} alt=""/>
 			</div>
 		);
 	}
