@@ -15,11 +15,12 @@ class MovieSection extends React.Component {
 
 class MovieList extends React.Component {
 	render(){
-		var a = this.props.data;
-		var rows = [];
-		for (var i = 0; i <a.length; i++) {	
-			rows.push(<Video  key={i} link={a[i].link} thumb={a[i].thumb} title={a[i].title} />)
-		}
+		var rows = this.props.data.map(function(comment,index){
+			return(
+				<Video  key={index} link={comment.link} thumb={comment.thumb} title={comment.title} />
+			)
+		});
+		
 		return(
 			<div className="movieList">
 				{rows}
